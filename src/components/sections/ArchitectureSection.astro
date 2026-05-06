@@ -43,7 +43,9 @@ const layers = [
 <style>
   .architecture {
     border-block: 1px solid rgba(168, 176, 184, 0.12);
-    background: rgba(16, 18, 22, 0.3);
+    background:
+      linear-gradient(180deg, rgba(16, 18, 22, 0.18), rgba(16, 18, 22, 0.42)),
+      rgba(5, 5, 5, 0.22);
   }
 
   .layers {
@@ -57,11 +59,36 @@ const layers = [
   }
 
   article {
+    position: relative;
     min-height: 280px;
+    overflow: hidden;
     padding: 1.25rem;
     background:
       linear-gradient(145deg, rgba(16, 18, 22, 0.94), rgba(5, 5, 5, 0.8)),
       radial-gradient(circle at top right, rgba(212, 175, 55, 0.08), transparent 44%);
+  }
+
+  article::after {
+    position: absolute;
+    right: -2rem;
+    bottom: -2rem;
+    width: 8rem;
+    aspect-ratio: 1;
+    content: "";
+    border: 1px solid rgba(168, 176, 184, 0.1);
+    border-radius: 50%;
+  }
+
+  article:nth-child(2) {
+    background:
+      linear-gradient(145deg, rgba(17, 21, 26, 0.94), rgba(5, 5, 5, 0.8)),
+      radial-gradient(circle at top right, rgba(56, 215, 255, 0.07), transparent 44%);
+  }
+
+  article:nth-child(3) {
+    background:
+      linear-gradient(145deg, rgba(14, 18, 16, 0.94), rgba(5, 5, 5, 0.8)),
+      radial-gradient(circle at top right, rgba(53, 211, 153, 0.07), transparent 44%);
   }
 
   span {
@@ -95,4 +122,3 @@ const layers = [
     }
   }
 </style>
-

@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
   <div class="container footer-grid">
     <div>
       <img src={site.logo} alt="" width="54" height="54" />
-      <h2>Juan David Idarraga</h2>
+      <h2>{site.brandName}</h2>
       <p>Ingenieria de software aplicada a operaciones, plataformas web, sistemas POS, movilidad y datos de negocio.</p>
     </div>
     <div class="footer-links">
@@ -17,7 +17,7 @@ const year = new Date().getFullYear();
     </div>
   </div>
   <div class="container footer-bottom">
-    <span>© {year} Juan David Idarraga</span>
+    <span>&copy; {year} {site.personName}</span>
     <span>Built with Astro, TypeScript and content collections.</span>
   </div>
 </footer>
@@ -25,14 +25,16 @@ const year = new Date().getFullYear();
 <style>
   .footer {
     border-top: 1px solid var(--line-soft);
-    background: rgba(5, 5, 5, 0.74);
+    background:
+      linear-gradient(180deg, rgba(16, 18, 22, 0.5), rgba(5, 5, 5, 0.86)),
+      rgba(5, 5, 5, 0.74);
   }
 
   .footer-grid {
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 2rem;
-    padding-block: 3rem;
+    padding-block: 2.45rem;
   }
 
   img {
@@ -76,7 +78,7 @@ const year = new Date().getFullYear();
     display: flex;
     justify-content: space-between;
     gap: 1rem;
-    padding-block: 1.2rem;
+    padding-block: 1.05rem;
     border-top: 1px solid rgba(168, 176, 184, 0.12);
     color: rgba(168, 176, 184, 0.72);
     font-family: var(--font-mono);
@@ -91,4 +93,3 @@ const year = new Date().getFullYear();
     }
   }
 </style>
-

@@ -1,3 +1,7 @@
+---
+import { site } from '@data/site';
+---
+
 <section class="section contact" id="contacto">
   <div class="container contact-shell" data-reveal>
     <div>
@@ -9,18 +13,32 @@
       </p>
     </div>
     <div class="contact-actions">
-      <a class="button" href="mailto:contacto@juan-david-idarraga.github.io">Iniciar conversacion</a>
+      <a
+        class="button"
+        href={site.whatsapp.url}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`Iniciar conversacion por WhatsApp al ${site.whatsapp.phone}`}
+      >
+        Iniciar conversacion
+      </a>
       <a class="button secondary" href="/proyectos/">Explorar proyectos</a>
     </div>
   </div>
 </section>
 
 <style>
+  .contact {
+    padding-block: clamp(56px, 7vw, 94px) clamp(42px, 5vw, 64px);
+  }
+
   .contact-shell {
+    position: relative;
     display: grid;
     grid-template-columns: minmax(0, 1fr) auto;
     gap: 2rem;
     align-items: end;
+    overflow: hidden;
     padding: clamp(1.4rem, 4vw, 2.5rem);
     border: 1px solid var(--line-gold);
     border-radius: var(--radius-lg);
@@ -28,6 +46,23 @@
       radial-gradient(circle at top right, rgba(212, 175, 55, 0.18), transparent 34rem),
       linear-gradient(145deg, rgba(16, 18, 22, 0.94), rgba(5, 5, 5, 0.84));
     box-shadow: var(--shadow-gold);
+  }
+
+  .contact-shell::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background:
+      linear-gradient(90deg, transparent, rgba(168, 176, 184, 0.07), transparent),
+      repeating-linear-gradient(135deg, rgba(255, 255, 255, 0.035) 0 1px, transparent 1px 18px);
+    mask-image: linear-gradient(120deg, transparent, black 36%, transparent 82%);
+    opacity: 0.42;
+  }
+
+  .contact-shell > * {
+    position: relative;
+    z-index: 1;
   }
 
   h2 {
@@ -62,4 +97,3 @@
     }
   }
 </style>
-
