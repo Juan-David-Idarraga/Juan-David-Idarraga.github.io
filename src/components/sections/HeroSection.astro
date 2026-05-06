@@ -1,0 +1,198 @@
+---
+import CircuitBackdrop from '@components/visual/CircuitBackdrop.astro';
+import { site } from '@data/site';
+---
+
+<section class="hero">
+  <CircuitBackdrop />
+  <div class="container hero-grid">
+    <div class="hero-copy" data-reveal>
+      <span class="eyebrow">Ingenieria aplicada a negocio</span>
+      <h1>Juan David Idarraga</h1>
+      <p class="lead">
+        Desarrollo software full-stack, movil y operacional para empresas que necesitan sistemas confiables,
+        trazables y preparados para crecer.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/proyectos/">Ver proyectos</a>
+        <a class="button secondary" href="#contacto">Conversar una solucion</a>
+      </div>
+    </div>
+
+    <div class="brand-system" data-reveal>
+      <div class="brand-orbit" aria-hidden="true">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+      <img src={site.logo} alt="Logo tecnico Juan David Idarraga" width="360" height="360" />
+      <div class="signal-row">
+        <span>Architecture</span>
+        <span>Operations</span>
+        <span>Data</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    position: relative;
+    min-height: min(760px, calc(100svh - 104px));
+    overflow: hidden;
+    padding-block: clamp(4rem, 8vw, 7.5rem) clamp(3rem, 6vw, 5rem);
+  }
+
+  .hero-grid {
+    position: relative;
+    z-index: 1;
+    display: grid;
+    grid-template-columns: minmax(0, 1.08fr) minmax(320px, 0.74fr);
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+
+  .hero-copy {
+    display: grid;
+    gap: 1.35rem;
+  }
+
+  h1 {
+    max-width: 780px;
+    margin: 0;
+    color: var(--platinum);
+    font-family: var(--font-display);
+    font-size: clamp(3.4rem, 8vw, 7.4rem);
+    line-height: 0.92;
+  }
+
+  .lead {
+    max-width: 720px;
+    margin: 0;
+    color: var(--technical-silver);
+    font-size: clamp(1.08rem, 2vw, 1.34rem);
+    line-height: 1.78;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.85rem;
+    margin-top: 0.55rem;
+  }
+
+  .brand-system {
+    position: relative;
+    display: grid;
+    place-items: center;
+    min-height: 420px;
+  }
+
+  .brand-system img {
+    position: relative;
+    z-index: 2;
+    width: min(360px, 78vw);
+    border-radius: 50%;
+    filter: drop-shadow(0 0 44px rgba(212, 175, 55, 0.22));
+  }
+
+  .brand-orbit {
+    position: absolute;
+    inset: 4%;
+    border: 1px solid rgba(212, 175, 55, 0.22);
+    border-radius: 50%;
+    animation: rotate-slow 24s linear infinite;
+  }
+
+  .brand-orbit::before,
+  .brand-orbit::after {
+    position: absolute;
+    inset: 12%;
+    content: "";
+    border: 1px solid rgba(168, 176, 184, 0.16);
+    border-radius: 50%;
+  }
+
+  .brand-orbit::after {
+    inset: 25%;
+    border-color: rgba(56, 215, 255, 0.12);
+  }
+
+  .brand-orbit span {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--metal-gold);
+    box-shadow: 0 0 24px rgba(212, 175, 55, 0.6);
+  }
+
+  .brand-orbit span:nth-child(1) {
+    top: 10%;
+    left: 50%;
+  }
+
+  .brand-orbit span:nth-child(2) {
+    right: 8%;
+    bottom: 32%;
+  }
+
+  .brand-orbit span:nth-child(3) {
+    bottom: 15%;
+    left: 20%;
+    background: var(--signal-cyan);
+    box-shadow: 0 0 24px rgba(56, 215, 255, 0.46);
+  }
+
+  .signal-row {
+    position: absolute;
+    bottom: 0.5rem;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+
+  .signal-row span {
+    padding: 0.45rem 0.66rem;
+    border: 1px solid var(--line-soft);
+    border-radius: 999px;
+    background: rgba(5, 5, 5, 0.72);
+    color: var(--technical-silver);
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+  }
+
+  @keyframes rotate-slow {
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+  @media (max-width: 900px) {
+    .hero {
+      min-height: auto;
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .brand-system {
+      min-height: 330px;
+      order: -1;
+    }
+
+    h1 {
+      font-size: clamp(3.1rem, 15vw, 5rem);
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .brand-orbit {
+      animation: none;
+    }
+  }
+</style>
+

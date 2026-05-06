@@ -1,0 +1,62 @@
+---
+import ProjectCard from '@components/ui/ProjectCard.astro';
+import SectionHeading from '@components/ui/SectionHeading.astro';
+import type { CollectionEntry } from 'astro:content';
+
+interface Props {
+  projects: CollectionEntry<'projects'>[];
+}
+
+const { projects } = Astro.props;
+---
+
+<section class="section featured-projects" id="proyectos">
+  <div class="container">
+    <div class="heading-row">
+      <SectionHeading
+        eyebrow="Proyectos destacados"
+        title="Casos construidos desde operacion, datos y arquitectura."
+        text="Los proyectos iniciales muestran la direccion del portafolio: sistemas utiles, criterio tecnico y capacidad de traducir necesidades de negocio en software."
+      />
+      <a class="button secondary" href="/proyectos/">Ver todos</a>
+    </div>
+    <div class="projects-grid">
+      {projects.map((project) => <ProjectCard project={project} featured />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .featured-projects {
+    background: linear-gradient(180deg, transparent, rgba(16, 18, 22, 0.38), transparent);
+  }
+
+  .heading-row {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 1.5rem;
+    align-items: start;
+  }
+
+  .heading-row :global(.section-heading) {
+    margin-bottom: 0;
+  }
+
+  .projects-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 1rem;
+    margin-top: clamp(2rem, 4vw, 3.25rem);
+  }
+
+  @media (max-width: 980px) {
+    .projects-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .heading-row {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

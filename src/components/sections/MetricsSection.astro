@@ -1,0 +1,39 @@
+---
+import MetricCard from '@components/ui/MetricCard.astro';
+import SectionHeading from '@components/ui/SectionHeading.astro';
+import { site } from '@data/site';
+---
+
+<section class="section">
+  <div class="container">
+    <SectionHeading
+      eyebrow="Impacto operacional"
+      title="Un portafolio orientado a problemas reales, no a vitrinas decorativas."
+      text="Cada proyecto debe explicar contexto, arquitectura, restricciones y resultado. Ese es el lenguaje que entienden los equipos tecnicos y los clientes corporativos."
+    />
+    <div class="metric-grid">
+      {site.metrics.map((metric) => <MetricCard {...metric} />)}
+    </div>
+  </div>
+</section>
+
+<style>
+  .metric-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  @media (max-width: 980px) {
+    .metric-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 580px) {
+    .metric-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

@@ -1,0 +1,31 @@
+---
+import { getCollection } from 'astro:content';
+import ArchitectureSection from '@components/sections/ArchitectureSection.astro';
+import CapabilitiesMapSection from '@components/sections/CapabilitiesMapSection.astro';
+import ContactSection from '@components/sections/ContactSection.astro';
+import FeaturedProjectsSection from '@components/sections/FeaturedProjectsSection.astro';
+import HeroSection from '@components/sections/HeroSection.astro';
+import MetricsSection from '@components/sections/MetricsSection.astro';
+import ProfileSection from '@components/sections/ProfileSection.astro';
+import StackSection from '@components/sections/StackSection.astro';
+import ValuePropSection from '@components/sections/ValuePropSection.astro';
+import BaseLayout from '@layouts/BaseLayout.astro';
+import { site } from '@data/site';
+
+const projects = (await getCollection('projects'))
+  .filter((project) => project.data.featured)
+  .sort((a, b) => b.data.year - a.data.year);
+---
+
+<BaseLayout title={site.title} description={site.description}>
+  <HeroSection />
+  <ValuePropSection />
+  <MetricsSection />
+  <FeaturedProjectsSection projects={projects} />
+  <CapabilitiesMapSection />
+  <ArchitectureSection />
+  <StackSection />
+  <ProfileSection />
+  <ContactSection />
+</BaseLayout>
+

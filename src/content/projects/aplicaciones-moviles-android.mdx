@@ -1,0 +1,63 @@
+---
+title: "Aplicaciones Moviles Android"
+slug: "aplicaciones-moviles-android"
+featured: true
+year: 2026
+type:
+  - Mobile
+  - Android
+  - Datos
+industry: "Movilidad / Productividad"
+role: "Diseño de experiencia movil, logica de aplicacion, persistencia local y preparacion para integracion API"
+summary: "Conjunto de aplicaciones Android orientadas a productividad, captura de datos y procesos que requieren movilidad."
+problem: "Muchos procesos operacionales ocurren fuera del escritorio: captura de informacion, revision de estados, tareas en terreno y consulta rapida de datos."
+stack:
+  - Android
+  - Kotlin
+  - SQLite
+  - REST APIs
+  - Material Design
+architecture:
+  - "Separacion entre capa de presentacion, logica de dominio y persistencia local."
+  - "Modelo preparado para sincronizacion con APIs cuando exista conectividad."
+  - "Flujos moviles centrados en rapidez, legibilidad y tolerancia a errores."
+  - "Estructura escalable para formularios, listados, estados y reportes simples."
+challenges:
+  - "Diseñar interfaces compactas sin perder claridad operacional."
+  - "Preparar datos locales para escenarios con conectividad variable."
+  - "Mantener codigo organizado en aplicaciones que tienden a crecer rapido."
+decisions:
+  - title: "Persistencia local primero"
+    reason: "Permite continuidad operacional cuando el usuario no puede depender siempre de red estable."
+  - title: "Arquitectura por capas"
+    reason: "Aisla UI, reglas y datos para facilitar pruebas, mantenimiento e integraciones futuras."
+  - title: "Flujos de baja friccion"
+    reason: "En mobile, cada paso extra reduce adopcion y aumenta errores de captura."
+results:
+  - "Aplicaciones preparadas para procesos moviles y captura estructurada."
+  - "Base escalable para integracion con backend y sincronizacion."
+  - "Mejor experiencia para usuarios que trabajan fuera de un escritorio."
+cover: "/project-assets/android-cover.svg"
+gallery:
+  - "/project-assets/android-flow.svg"
+  - "/project-assets/android-data.svg"
+seoTitle: "Aplicaciones Moviles Android | Juan David Idarraga"
+seoDescription: "Caso de aplicaciones moviles Android orientadas a productividad, captura de datos, persistencia local e integracion futura con APIs."
+---
+
+## Contexto
+
+La movilidad es clave cuando el proceso ocurre en terreno, en atencion directa o lejos de una estacion de trabajo. Una aplicacion Android bien diseñada permite capturar informacion, consultar datos y sostener continuidad operacional.
+
+## Solucion tecnica
+
+La propuesta usa una estructura por capas para separar interfaz, reglas de negocio y datos. Esto facilita evolucionar desde aplicaciones simples hacia soluciones conectadas a APIs, sincronizacion y reportes.
+
+## Experiencia de uso
+
+El diseño movil prioriza formularios claros, estados visibles, acciones directas y lectura rapida. La interfaz debe ayudar al usuario a completar tareas sin cargarlo con complejidad tecnica.
+
+## Evolucion posible
+
+Las aplicaciones pueden crecer hacia sincronizacion offline-first, autenticacion, dashboards administrativos, notificaciones y analitica de uso para detectar cuellos de botella.
+

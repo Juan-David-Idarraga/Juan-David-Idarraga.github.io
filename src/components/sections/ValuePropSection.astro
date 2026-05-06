@@ -1,0 +1,59 @@
+<section class="section-tight value-prop">
+  <div class="container value-grid">
+    <div data-reveal>
+      <span class="eyebrow">Propuesta de valor</span>
+      <h2>Software que conecta operacion, arquitectura y resultados medibles.</h2>
+    </div>
+    <div class="value-copy" data-reveal>
+      <p>
+        Mi enfoque combina entendimiento del proceso empresarial, modelado tecnico y construccion pragmatica.
+        La meta no es solo publicar una interfaz: es entregar sistemas que ordenen datos, reduzcan friccion,
+        mejoren trazabilidad y permitan tomar mejores decisiones.
+      </p>
+      <p>
+        Trabajo desde el problema operacional hacia la solucion: flujos POS, inventario, plataformas web,
+        aplicaciones Android, APIs, despliegue y bases listas para analitica.
+      </p>
+    </div>
+  </div>
+</section>
+
+<style>
+  .value-prop {
+    border-block: 1px solid rgba(168, 176, 184, 0.12);
+    background: rgba(16, 18, 22, 0.36);
+  }
+
+  .value-grid {
+    display: grid;
+    grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+    gap: clamp(2rem, 5vw, 4rem);
+    align-items: start;
+  }
+
+  h2 {
+    margin: 1rem 0 0;
+    font-family: var(--font-display);
+    font-size: clamp(2rem, 4vw, 3.45rem);
+    line-height: 1.05;
+  }
+
+  .value-copy {
+    display: grid;
+    gap: 1rem;
+  }
+
+  p {
+    margin: 0;
+    color: var(--technical-silver);
+    font-size: 1.04rem;
+    line-height: 1.9;
+  }
+
+  @media (max-width: 820px) {
+    .value-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

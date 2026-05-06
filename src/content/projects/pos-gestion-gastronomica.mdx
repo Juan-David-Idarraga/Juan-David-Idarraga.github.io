@@ -1,0 +1,67 @@
+---
+title: "Sistema POS & Gestion Gastronomica"
+slug: "sistema-pos-gestion-gastronomica"
+featured: true
+year: 2026
+type:
+  - POS
+  - Inventario
+  - Full-stack
+industry: "Gastronomia / Operaciones"
+role: "Arquitectura, experiencia de usuario, modelado de datos y desarrollo full-stack"
+summary: "Sistema operacional para ventas, caja, productos, stock y trazabilidad administrativa en un contexto gastronomico."
+problem: "La operacion gastronomica necesita registrar ventas con rapidez, mantener inventario consistente y entregar visibilidad clara del negocio sin depender de planillas aisladas."
+stack:
+  - TypeScript
+  - React
+  - Node.js
+  - SQL
+  - Docker
+architecture:
+  - "Separacion por dominios: ventas, productos, inventario, usuarios y reportes."
+  - "Modelo de datos orientado a movimientos para auditar cambios de stock y ventas."
+  - "Interfaz optimizada para caja, administracion y revision rapida de indicadores."
+  - "Base preparada para despliegue incremental y futuras integraciones de pagos o facturacion."
+challenges:
+  - "Evitar desincronizacion entre ventas, anulaciones y stock disponible."
+  - "Mantener flujos rapidos para usuarios operativos con baja tolerancia a friccion."
+  - "Diseñar reportes entendibles para toma de decisiones diaria."
+decisions:
+  - title: "Inventario basado en movimientos"
+    reason: "Permite reconstruir historial, detectar inconsistencias y auditar cambios sin depender solo del stock actual."
+  - title: "Modulos por responsabilidad operacional"
+    reason: "Reduce acoplamiento y facilita crecer hacia reportes, roles, promociones o integraciones externas."
+  - title: "UI de alta legibilidad"
+    reason: "En punto de venta, velocidad y claridad pesan mas que decoracion visual."
+results:
+  - "Mayor trazabilidad de ventas, productos y stock."
+  - "Base tecnica preparada para reportes operacionales y analitica."
+  - "Flujos administrativos mas consistentes y faciles de mantener."
+cover: "/project-assets/pos-cover.svg"
+gallery:
+  - "/project-assets/pos-architecture.svg"
+  - "/project-assets/pos-flow.svg"
+seoTitle: "Sistema POS & Gestion Gastronomica | Juan David Idarraga"
+seoDescription: "Caso de sistema POS gastronomico con inventario, ventas, arquitectura modular, trazabilidad y enfoque full-stack orientado a operaciones reales."
+---
+
+## Contexto
+
+Un sistema gastronomico no puede tratarse como una simple interfaz de ventas. La operacion depende de tiempos rapidos, stock confiable, productos bien estructurados, caja clara y reportes que permitan entender lo que ocurre durante la jornada.
+
+Este caso plantea una solucion POS con foco en trazabilidad: cada venta, ajuste o anulacion debe dejar evidencia para que el negocio pueda operar con control y no con intuicion.
+
+## Solucion tecnica
+
+La solucion se organiza por dominios operacionales. Ventas administra el flujo de caja y boletas internas; productos concentra precios, categorias y disponibilidad; inventario registra movimientos; usuarios permite separar responsabilidades; reportes consolida indicadores para administracion.
+
+El frontend prioriza tareas frecuentes: buscar productos, registrar venta, revisar stock critico y acceder a indicadores. El backend valida reglas de negocio y protege la consistencia de datos.
+
+## Criterio de arquitectura
+
+El punto critico no es solo guardar ventas, sino conservar coherencia entre operaciones. Por eso el inventario se plantea como historial de movimientos, no como un numero editable sin contexto. Esta decision permite auditar cambios y preparar futuras capas de analitica.
+
+## Evolucion posible
+
+El sistema puede crecer hacia integracion con pagos, facturacion electronica, dashboards avanzados, prediccion de demanda y alertas de reposicion usando datos historicos.
+

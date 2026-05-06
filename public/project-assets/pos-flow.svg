@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#08090B"/>
+  <path d="M115 560h970" stroke="#252A31" stroke-width="4"/>
+  <g fill="#101216" stroke="#D4AF37" stroke-width="3">
+    <circle cx="180" cy="380" r="62"/><circle cx="420" cy="280" r="62"/><circle cx="660" cy="380" r="62"/><circle cx="900" cy="280" r="62"/>
+  </g>
+  <path d="M242 360 360 300M482 300 598 360M722 360 838 300" stroke="#A8B0B8" stroke-width="6" fill="none"/>
+  <g fill="#E6E8EA" font-family="Sora, sans-serif" font-size="26" font-weight="800" text-anchor="middle">
+    <text x="180" y="390">Venta</text><text x="420" y="290">Stock</text><text x="660" y="390">Caja</text><text x="900" y="290">Reporte</text>
+  </g>
+  <text x="150" y="155" fill="#D4AF37" font-family="JetBrains Mono, monospace" font-size="28">Flujo operacional trazable</text>
+</svg>
+

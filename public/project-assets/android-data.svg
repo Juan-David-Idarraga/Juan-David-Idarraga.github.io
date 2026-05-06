@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 760">
+  <rect width="1200" height="760" fill="#050505"/>
+  <g stroke="#252A31" stroke-width="3"><path d="M120 600h960M120 160v440"/></g>
+  <g fill="#101216" stroke="#D4AF37" stroke-width="4">
+    <rect x="190" y="350" width="120" height="250" rx="8"/>
+    <rect x="390" y="280" width="120" height="320" rx="8"/>
+    <rect x="590" y="210" width="120" height="390" rx="8"/>
+    <rect x="790" y="300" width="120" height="300" rx="8"/>
+  </g>
+  <path d="M250 350 450 280 650 210 850 300" stroke="#38D7FF" stroke-width="6" fill="none"/>
+  <text x="155" y="120" fill="#E6E8EA" font-family="Sora, sans-serif" font-size="46" font-weight="800">Datos moviles</text>
+  <text x="155" y="175" fill="#A8B0B8" font-family="Inter, sans-serif" font-size="27">Captura local, estados y futura analitica operacional</text>
+</svg>
+

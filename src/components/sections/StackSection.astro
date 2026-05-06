@@ -1,0 +1,68 @@
+---
+import SectionHeading from '@components/ui/SectionHeading.astro';
+import { site } from '@data/site';
+---
+
+<section class="section" id="stack">
+  <div class="container">
+    <SectionHeading
+      eyebrow="Stack tecnico"
+      title="Herramientas elegidas por claridad, rendimiento y mantenibilidad."
+      text="La base del portafolio esta preparada para evolucionar: contenido tipado, paginas estaticas, interactividad selectiva y despliegue simple."
+    />
+    <div class="stack-grid">
+      {site.stackGroups.map((group) => (
+        <article data-reveal>
+          <h3>{group.title}</h3>
+          <div>
+            {group.items.map((item) => <span class="chip">{item}</span>)}
+          </div>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+  .stack-grid {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 1rem;
+  }
+
+  article {
+    display: grid;
+    align-content: space-between;
+    min-height: 230px;
+    padding: 1.25rem;
+    border: 1px solid var(--line-soft);
+    border-radius: var(--radius-md);
+    background: rgba(16, 18, 22, 0.66);
+  }
+
+  h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+  }
+
+  div {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 2rem;
+  }
+
+  @media (max-width: 980px) {
+    .stack-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 580px) {
+    .stack-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+

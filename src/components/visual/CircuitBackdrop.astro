@@ -1,0 +1,73 @@
+<div class="circuit" aria-hidden="true">
+  <span class="node node-a"></span>
+  <span class="node node-b"></span>
+  <span class="node node-c"></span>
+  <span class="trace trace-a"></span>
+  <span class="trace trace-b"></span>
+  <span class="trace trace-c"></span>
+</div>
+
+<style>
+  .circuit {
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  .trace,
+  .node {
+    position: absolute;
+    opacity: 0.7;
+  }
+
+  .trace {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.62), rgba(56, 215, 255, 0.18), transparent);
+  }
+
+  .trace-a {
+    top: 24%;
+    left: 9%;
+    width: 34%;
+  }
+
+  .trace-b {
+    right: 8%;
+    bottom: 30%;
+    width: 38%;
+  }
+
+  .trace-c {
+    top: 48%;
+    left: 52%;
+    width: 24%;
+    transform: rotate(90deg);
+  }
+
+  .node {
+    width: 10px;
+    height: 10px;
+    border: 1px solid var(--metal-gold);
+    border-radius: 50%;
+    box-shadow: 0 0 22px rgba(212, 175, 55, 0.45);
+  }
+
+  .node-a {
+    top: 23%;
+    left: 42%;
+  }
+
+  .node-b {
+    right: 22%;
+    bottom: 29%;
+  }
+
+  .node-c {
+    top: 58%;
+    left: 13%;
+    border-color: var(--signal-cyan);
+    box-shadow: 0 0 22px rgba(56, 215, 255, 0.32);
+  }
+</style>
