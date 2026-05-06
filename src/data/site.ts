@@ -1,6 +1,8 @@
 export const site = {
+  brandName: 'Tecnology of Jota',
+  personName: 'Juan David Idarraga',
   name: 'Juan David Idarraga',
-  title: 'Juan David Idarraga | Ingenieria de Software para Operaciones Reales',
+  title: 'Tecnology of Jota | Juan David Idarraga',
   description:
     'Portafolio profesional de Juan David Idarraga: desarrollo full-stack, movil, sistemas POS, plataformas web, inventario, logistica, arquitectura de software y datos aplicados a negocio.',
   url: 'https://juan-david-idarraga.github.io',
@@ -66,4 +68,3 @@ export const site = {
     },
   ],
 };
-
