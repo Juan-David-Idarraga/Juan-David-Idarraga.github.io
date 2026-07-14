@@ -1,108 +1,36 @@
-# Tecnology of Jota Portfolio
+# Portafolio de Juan David Idarraga Bolaños
 
-Portafolio profesional premium de Juan David Idarraga, construido con Astro, TypeScript, MDX, Astro Content Collections y un sistema propio de tokens CSS.
+Portafolio profesional de una sola página construido con Next.js, TypeScript, Motion y Lucide. El contenido editable vive en `data/portfolio.ts`; los componentes consumen esos datos sin duplicarlos.
 
-La arquitectura esta pensada para rendimiento, SEO, mantenimiento de contenido y despliegue estatico en GitHub Pages. El sitio permite agregar proyectos nuevos desde archivos MDX sin editar manualmente los componentes de la homepage, listado o paginas dinamicas.
-
-## Inicio rapido
-
-Requiere Node.js 22.12 o superior.
+## Desarrollo
 
 ```bash
 npm install
 npm run dev
 ```
 
-Luego abre la URL que indique Astro, normalmente:
-
-```txt
-http://localhost:4321
-```
-
-## Scripts disponibles
+Para validar la entrega:
 
 ```bash
-npm run dev
-```
-
-Inicia el servidor local de desarrollo.
-
-```bash
+npm run lint
 npm run build
 ```
 
-Genera la version estatica de produccion dentro de `dist/`.
+## Recursos del portafolio
 
-```bash
-npm run preview
-```
+- Logo real: `public/brand/logo-juan-david.png`. Mientras no exista, el sitio muestra un monograma tipográfico accesible.
+- CV: `public/documents/cv-juan-david-idarraga.pdf`. El modal detecta su ausencia y ofrece contacto por correo.
+- Capturas: cada proyecto guarda sus imágenes públicas en `public/projects/<proyecto>/`.
+- Recorridos y textos de cada captura: `data/project-captures.ts`.
+- Casos de estudio y tecnologías verificadas: `data/portfolio.ts`.
 
-Previsualiza localmente el build de produccion.
+## Configuración
 
-```bash
-npm run check
-```
+Define `NEXT_PUBLIC_SITE_URL` a partir de `.env.example` cuando exista el dominio final. Esta URL alimenta canonical, sitemap, robots y datos estructurados.
 
-Sincroniza tipos y contenido de Astro.
+El formulario no utiliza backend: valida los datos y prepara un borrador mediante `mailto:` para que el visitante lo revise antes de enviarlo.
 
-## Estructura principal
+## Documentación
 
-```txt
-src/
-  components/
-    navigation/
-    sections/
-    ui/
-    visual/
-  content/
-    projects/
-  data/
-  layouts/
-  pages/
-    proyectos/
-  styles/
-public/
-  brand/
-  og/
-  project-assets/
-  videos/
-docs/
-  CONTENT_MANAGEMENT.md
-```
-
-## Administracion de contenido
-
-La guia completa para administrar proyectos, imagenes, galerias, videos y assets esta en:
-
-[docs/CONTENT_MANAGEMENT.md](docs/CONTENT_MANAGEMENT.md)
-
-Esa guia explica:
-
-- como crear un proyecto desde cero,
-- como llenar cada campo del frontmatter,
-- donde guardar imagenes y videos,
-- como referenciar assets correctamente,
-- como destacar proyectos en la homepage,
-- como editar proyectos existentes,
-- errores comunes y como evitarlos,
-- buenas practicas para mantener el portafolio ordenado.
-
-## Despliegue en GitHub Pages
-
-Este repo incluye `.github/workflows/deploy.yml`.
-
-En GitHub:
-
-1. Entra a `Settings > Pages`.
-2. Selecciona `GitHub Actions` como fuente.
-3. Haz push a `main`.
-4. Revisa la pestaña `Actions` y espera que el workflow termine en verde.
-
-El sitio esta configurado para el repositorio especial `Juan-David-Idarraga.github.io`, por lo que no requiere `base` en `astro.config.mjs`.
-
-La URL publica esperada es:
-
-```txt
-https://juan-david-idarraga.github.io/
-```
-
+- [Auditoría del código](AUDITORIA-CODIGO.md)
+- [Guía para agregar proyectos y desplegar](GUIA-MANTENIMIENTO-Y-DESPLIEGUE.md)
