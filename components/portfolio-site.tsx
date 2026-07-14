@@ -76,7 +76,7 @@ import {
   services,
   technologies,
 } from "@/data/portfolio";
-import { CV_PATH, WHATSAPP_URL } from "@/lib/constants";
+import { CV_PATH, CV_WORD_PATH, WHATSAPP_URL } from "@/lib/constants";
 import type { Project } from "@/types/portfolio";
 import { useActiveSection } from "@/hooks/use-active-section";
 import { SectionHeading } from "@/components/ui/section-heading";
@@ -234,10 +234,12 @@ function ModalShell({
 }
 
 function ProjectVisual({ project, compact = false }: { project: Project; compact?: boolean }) {
-  const coverCapture = project.captures.reduce(
+  // Elijo la portada de forma explícita para mantener independiente el orden narrativo de cada galería.
+  const firstCapture = project.captures.reduce(
     (current, capture) => (!current || capture.order < current.order ? capture : current),
     project.captures[0],
   );
+  const coverCapture = project.captures.find((capture) => capture.src === project.coverSrc) ?? firstCapture;
   const imageSource = coverCapture?.src;
   const [imageLoaded, setImageLoaded] = useState(false);
 
@@ -501,7 +503,12 @@ function CvModal({ onClose }: { onClose: () => void }) {
             <a className="button button--gold" href={`mailto:${contactInfo.email}?subject=Solicitud%20de%20CV`}>Solicitar por correo <Mail size={16} /></a>
           </div>
         )}
-        {available ? <div className="modal-actions"><a className="button button--gold" href={CV_PATH} download>Descargar CV <Download size={16} /></a></div> : null}
+        {available ? (
+          <div className="modal-actions">
+            <a className="button button--gold" href={CV_PATH} download>Descargar PDF <Download size={16} /></a>
+            <a className="button button--ghost" href={CV_WORD_PATH} download>Descargar Word <FileText size={16} /></a>
+          </div>
+        ) : null}
       </div>
     </ModalShell>
   );

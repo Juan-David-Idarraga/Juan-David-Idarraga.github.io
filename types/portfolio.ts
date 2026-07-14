@@ -42,6 +42,7 @@ export type Project = {
   features: string[];
   stack: string[];
   captures: ProjectCapture[];
+  coverSrc: string;
   demoUrl?: string;
   codeUrl?: string;
   date?: string;

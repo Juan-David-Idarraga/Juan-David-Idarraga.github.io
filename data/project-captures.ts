@@ -176,6 +176,91 @@ export const busDelSaborCaptures = [
   },
 ] satisfies ProjectCapture[];
 
+// Presento primero el recorrido comercial y después el acceso privado para que la galería se entienda como una historia completa.
+export const interagroCaptures = [
+  {
+    src: "/projects/interagro/inicio-catalogo.webp",
+    alt: "Portada pública del catálogo digital de productos Interagro",
+    title: "Inicio — Catálogo comercial",
+    description: "Presentación del servicio y explicación del recorrido para revisar productos, preparar la solicitud y enviarla por WhatsApp.",
+    module: "Sitio público",
+    order: 1,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/catalogo-destacados.webp",
+    alt: "Productos destacados del catálogo comercial Interagro",
+    title: "Catálogo — Productos destacados",
+    description: "Vista comercial con disponibilidad, categoría, formato, precio y acceso directo a la solicitud.",
+    module: "Catálogo",
+    order: 2,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/catalogo-filtros.webp",
+    alt: "Catálogo Interagro con búsqueda y filtros por categoría",
+    title: "Catálogo — Búsqueda y filtros",
+    description: "Exploración de productos mediante búsqueda, categorías y criterios de disponibilidad.",
+    module: "Catálogo",
+    order: 3,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/solicitud-productos.webp",
+    alt: "Resumen de productos seleccionados en una solicitud Interagro",
+    title: "Solicitud — Productos y cantidades",
+    description: "Carrito de solicitud con ajuste de cantidades, detalle comercial y continuidad hacia los datos del negocio.",
+    module: "Solicitud",
+    order: 4,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/datos-negocio.webp",
+    alt: "Formulario de datos comerciales para una solicitud Interagro",
+    title: "Solicitud — Datos del negocio",
+    description: "Registro de contacto, comuna, dirección, fecha y horario preferido para coordinar el pedido.",
+    module: "Solicitud",
+    order: 5,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/solicitud-confirmada.webp",
+    alt: "Confirmación con número de pedido en Interagro",
+    title: "Solicitud — Confirmación",
+    description: "Resumen final con identificador de pedido y acción para enviar la información preparada por WhatsApp.",
+    module: "Solicitud",
+    order: 6,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/acceso-administracion.webp",
+    alt: "Inicio de sesión del panel privado Interagro",
+    title: "Administración — Acceso privado",
+    description: "Pantalla de autenticación que protege las herramientas internas de gestión.",
+    module: "Administración",
+    order: 7,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/panel-administracion.webp",
+    alt: "Panel de administración y reparto de Interagro",
+    title: "Administración — Panel operativo",
+    description: "Resumen de solicitudes y accesos a pedidos, calendario, clientes y herramientas para compartir el catálogo.",
+    module: "Administración",
+    order: 8,
+    format: "desktop",
+  },
+  {
+    src: "/projects/interagro/gestion-productos.webp",
+    alt: "Gestor de productos del panel administrativo Interagro",
+    title: "Administración — Gestión de productos",
+    description: "Edición de precio, formato, categoría, conservación, visibilidad y descripción comercial de cada producto.",
+    module: "Administración",
+    order: 9,
+    format: "desktop",
+  },
+] satisfies ProjectCapture[];
+
 export const fundacionReikiCaptures = [
   {
     src: "/projects/fundacion-reiki/inicio-centro-reiki.webp",

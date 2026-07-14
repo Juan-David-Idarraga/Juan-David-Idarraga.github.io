@@ -8,3 +8,4 @@ export const WHATSAPP_URL = `https://wa.me/${contactInfo.whatsappNumber}?text=${
 )}`;
 
 export const CV_PATH = "/documents/cv-juan-david-idarraga.pdf";
+export const CV_WORD_PATH = "/documents/cv-juan-david-idarraga.docx";

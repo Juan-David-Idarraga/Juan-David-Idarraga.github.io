@@ -13,6 +13,7 @@ import {
   busDelSaborCaptures,
   familyWafflesCaptures,
   fundacionReikiCaptures,
+  interagroCaptures,
 } from "@/data/project-captures";
 
 // Mantengo todo el contenido editable en este archivo para no mezclar textos
@@ -95,6 +96,7 @@ export const projects: Project[] = [
     ],
     stack: ["Next.js", "Supabase", "SQL", "Vercel"],
     captures: busDelSaborCaptures,
+    coverSrc: "/projects/bus-del-sabor/menu-inicial.png",
     featured: true,
     private: true,
     visual: "pos",
@@ -126,6 +128,7 @@ export const projects: Project[] = [
     ],
     stack: ["Vercel"],
     captures: fundacionReikiCaptures,
+    coverSrc: "/projects/fundacion-reiki/inicio-centro-reiki.webp",
     demoUrl: "https://fundacion-reiki.vercel.app",
     featured: true,
     private: true,
@@ -159,9 +162,44 @@ export const projects: Project[] = [
     ],
     stack: [],
     captures: familyWafflesCaptures,
+    coverSrc: "/projects/family-waffles-pos/ventas-catalogo.webp",
     featured: true,
     private: true,
     visual: "pos",
+  },
+  {
+    id: "project-interagro",
+    slug: "interagro-catalogo-comercial",
+    title: "Interagro · Catálogo comercial",
+    category: "Plataforma web · Ventas B2B",
+    status: "En desarrollo",
+    shortDescription:
+      "Catálogo digital para consultar productos, preparar solicitudes comerciales y coordinar pedidos por WhatsApp.",
+    fullDescription:
+      "Interagro organiza la oferta comercial en una experiencia web responsive: el cliente explora productos, filtra el catálogo, arma una solicitud y comparte el pedido por WhatsApp, mientras el equipo dispone de un panel privado para gestionar la operación.",
+    problem:
+      "La venta mayorista necesita mostrar precios, formatos y disponibilidad con claridad, pero también recoger los datos del negocio y coordinar la entrega sin convertir el catálogo en una tienda con pago en línea.",
+    solution:
+      "Diseñé un recorrido que conecta catálogo, búsqueda, categorías, solicitud de productos, datos comerciales, confirmación con número de pedido y envío por WhatsApp. El panel privado centraliza el seguimiento y la gestión del catálogo.",
+    focus:
+      "Convertí una conversación comercial dispersa en un flujo guiado, móvil y trazable, preparado para trabajar con datos en Supabase sin exponer información administrativa al público.",
+    features: [
+      "Catálogo con búsqueda, categorías y disponibilidad",
+      "Precios, formatos y condiciones de conservación",
+      "Solicitud de productos sin pago en línea",
+      "Datos de negocio, contacto y fecha preferida",
+      "Confirmación con número de pedido",
+      "Mensaje de WhatsApp preparado automáticamente",
+      "Acceso privado y panel de administración",
+      "Gestión de productos y datos comerciales",
+      "Experiencia responsive orientada a móviles",
+    ],
+    stack: ["Next.js", "TypeScript", "Zustand", "Supabase", "WhatsApp"],
+    captures: interagroCaptures,
+    coverSrc: "/projects/interagro/inicio-catalogo.webp",
+    featured: true,
+    private: true,
+    visual: "web",
   },
 ];
 

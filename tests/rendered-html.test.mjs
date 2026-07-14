@@ -33,6 +33,8 @@ test("publica el portafolio real con sus secciones principales", async () => {
   assert.match(html, /src="\/projects\/bus-del-sabor\/menu-inicial\.png"/);
   assert.match(html, /src="\/projects\/fundacion-reiki\/inicio-centro-reiki\.webp"/);
   assert.match(html, /src="\/projects\/family-waffles-pos\/ventas-catalogo\.webp"/);
+  assert.match(html, /src="\/projects\/interagro\/inicio-catalogo\.webp"/);
+  assert.match(html, /Interagro · Catálogo comercial/);
   assert.doesNotMatch(html, /_vinext\/image[^"']*bus-del-sabor/);
   assert.doesNotMatch(html, /Codex is working|Your site is taking shape|codex-preview/i);
 });
@@ -54,9 +56,11 @@ test("mantiene protegidas las salidas externas y los datos estructurados", async
   assert.doesNotMatch(component, /\beval\s*\(|new Function\s*\(/);
   assert.match(portfolio, /Bus del Sabor · Sistema POS/);
   assert.match(portfolio, /Family Waffles · Sistema POS/);
+  assert.match(portfolio, /Interagro · Catálogo comercial/);
   assert.match(captures, /\/projects\/bus-del-sabor\/menu-inicial\.png/);
   assert.match(captures, /\/projects\/fundacion-reiki\/inicio-sesion\.webp/);
   assert.match(captures, /\/projects\/family-waffles-pos\/inicio-sesion\.webp/);
+  assert.match(captures, /\/projects\/interagro\/gestion-productos\.webp/);
   assert.doesNotMatch(captures, /imagen-\d|captura-\d|screenshot/i);
   assert.equal((component.match(/<Image\s+unoptimized/g) ?? []).length, 4);
 });
@@ -68,8 +72,15 @@ test("mantiene disponibles todas las capturas declaradas", async () => {
   );
   const sources = [...captures.matchAll(/src: "([^"]+)"/g)].map((match) => match[1]);
 
-  assert.equal(sources.length, 54);
+  assert.equal(sources.length, 63);
   await Promise.all(
     sources.map((source) => access(new URL(`../public${source}`, import.meta.url))),
   );
+});
+
+test("publica el currículum en PDF y Word", async () => {
+  await Promise.all([
+    access(new URL("../public/documents/cv-juan-david-idarraga.pdf", import.meta.url)),
+    access(new URL("../public/documents/cv-juan-david-idarraga.docx", import.meta.url)),
+  ]);
 });
